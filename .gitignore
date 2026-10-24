@@ -1,0 +1,22 @@
+# Tools that npm installs (Railway installs its own copy)
+node_modules/
+
+# Secret settings, if we ever add any
+.env
+.env.*
+
+# Log files
+npm-debug.log*
+*.log
+
+# Junk files that Windows and Mac make by themselves
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Private notes (they contain my real name)
+EDACK website - Claude Code prompt.md
+
+# Editor settings
+.vscode/
+.idea/

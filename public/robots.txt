@@ -1,0 +1,5 @@
+# Everyone (Google, Bing, Pinterest and others) is welcome to look at the whole site.
+User-agent: *
+Allow: /
+
+Sitemap: https://edack-books.up.railway.app/sitemap.xml

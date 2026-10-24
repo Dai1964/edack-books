@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://edack-books.up.railway.app/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <image:image>
+      <image:loc>https://edack-books.up.railway.app/images/lean-heroes-cover-960.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://edack-books.up.railway.app/images/yellow-belt-certificate-1280.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://edack-books.up.railway.app/images/cookie-cover-800.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://edack-books.up.railway.app/images/watchers-guide-cover-800.webp</image:loc>
+    </image:image>
+  </url>
+</urlset>

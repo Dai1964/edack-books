@@ -1,0 +1,24 @@
+{
+  "name": "edack-books",
+  "version": "1.0.0",
+  "description": "Author website for EDACK Books: Lean Heroes for kids and British satire for grown-ups.",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "images": "node scripts/optimise-images.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "compression": "^1.8.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  },
+  "author": "EDACK",
+  "license": "UNLICENSED"
+}
