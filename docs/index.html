@@ -6,27 +6,31 @@
   <title>EDACK Books | Funny books that make you think</title>
   <meta name="description" content="Funny books that make you think. The Lean Heroes for ages 8 to 11, a free printable Lean Hero certificate, and British satire for grown-ups.">
 
-  <!-- PLACEHOLDER: when you have your real web address, replace every
-       https://edack-books.up.railway.app on this page (and in robots.txt and sitemap.xml). -->
-  <link rel="canonical" href="https://edack-books.up.railway.app/">
+  <!-- Safety settings: the page may only load things from this site, so nothing can sneak in a tracker -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self'; font-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Web address: if you move to your own domain later, replace every
+       https://dai1964.github.io/edack-books on this page (and in robots.txt and sitemap.xml). -->
+  <link rel="canonical" href="https://dai1964.github.io/edack-books/">
 
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#FDF3DF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1E1209" media="(prefers-color-scheme: dark)">
 
   <!-- Browser-tab and home-screen icons -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <!-- Load the heading font and the top picture early, so the page appears fast -->
-  <link rel="preload" href="/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="/images/hero-artwork-1080.webp"
-        imagesrcset="/images/hero-artwork-640.webp 640w, /images/hero-artwork-1080.webp 1080w, /images/hero-artwork-1600.webp 1600w"
+  <link rel="preload" href="fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="images/hero-artwork-1080.webp"
+        imagesrcset="images/hero-artwork-640.webp 640w, images/hero-artwork-1080.webp 1080w, images/hero-artwork-1600.webp 1600w"
         imagesizes="(min-width: 900px) 62vw, 100vw" fetchpriority="high">
-  <link rel="stylesheet" href="/css/styles.css">
-  <script src="/js/main.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 
   <!-- Sharing: what Pinterest, Facebook, WhatsApp and others show -->
   <meta property="og:type" content="website">
@@ -34,8 +38,8 @@
   <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="EDACK Books | Funny books that make you think">
   <meta property="og:description" content="Stories for curious kids and grown-ups who've had enough. Plus a free printable Lean Hero certificate.">
-  <meta property="og:url" content="https://edack-books.up.railway.app/">
-  <meta property="og:image" content="https://edack-books.up.railway.app/images/share-lean-heroes.jpg">
+  <meta property="og:url" content="https://dai1964.github.io/edack-books/">
+  <meta property="og:image" content="https://dai1964.github.io/edack-books/images/share-lean-heroes.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -43,7 +47,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="EDACK Books | Funny books that make you think">
   <meta name="twitter:description" content="Stories for curious kids and grown-ups who've had enough. Plus a free printable Lean Hero certificate.">
-  <meta name="twitter:image" content="https://edack-books.up.railway.app/images/share-lean-heroes.jpg">
+  <meta name="twitter:image" content="https://dai1964.github.io/edack-books/images/share-lean-heroes.jpg">
   <meta name="twitter:image:alt" content="The cover of The Lean Heroes and the Dinner Disaster by David Edack">
 
   <!-- Book details for Google -->
@@ -53,27 +57,27 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://edack-books.up.railway.app/#author",
+        "@id": "https://dai1964.github.io/edack-books/#author",
         "name": "David Edack",
         "alternateName": "EDACK",
-        "url": "https://edack-books.up.railway.app/",
+        "url": "https://dai1964.github.io/edack-books/",
         "description": "EDACK writes British satire for adults and problem-solving adventures for children."
       },
       {
         "@type": "WebSite",
-        "@id": "https://edack-books.up.railway.app/#website",
-        "url": "https://edack-books.up.railway.app/",
+        "@id": "https://dai1964.github.io/edack-books/#website",
+        "url": "https://dai1964.github.io/edack-books/",
         "name": "EDACK Books",
         "inLanguage": "en-GB",
-        "publisher": { "@id": "https://edack-books.up.railway.app/#author" }
+        "publisher": { "@id": "https://dai1964.github.io/edack-books/#author" }
       },
       {
         "@type": "Book",
-        "@id": "https://edack-books.up.railway.app/#lean-heroes",
+        "@id": "https://dai1964.github.io/edack-books/#lean-heroes",
         "name": "The Lean Heroes and the Dinner Disaster",
-        "author": { "@id": "https://edack-books.up.railway.app/#author" },
+        "author": { "@id": "https://dai1964.github.io/edack-books/#author" },
         "url": "https://amzn.eu/d/06jhQWxB",
-        "image": "https://edack-books.up.railway.app/images/lean-heroes-cover-960.webp",
+        "image": "https://dai1964.github.io/edack-books/images/lean-heroes-cover-960.webp",
         "description": "Five woodland friends turn Friday dinner into a disaster, then learn the five steps the world's best factories and hospitals use to fix problems: Define, Measure, Analyse, Improve, Control.",
         "genre": "Children's fiction",
         "inLanguage": "en-GB",
@@ -83,11 +87,11 @@
       },
       {
         "@type": "Book",
-        "@id": "https://edack-books.up.railway.app/#cookie",
+        "@id": "https://dai1964.github.io/edack-books/#cookie",
         "name": "Cookie and the Pantomime of Power",
-        "author": { "@id": "https://edack-books.up.railway.app/#author" },
+        "author": { "@id": "https://dai1964.github.io/edack-books/#author" },
         "url": "https://www.amazon.co.uk/dp/B0HM8G2Q5C",
-        "image": "https://edack-books.up.railway.app/images/cookie-cover-800.webp",
+        "image": "https://dai1964.github.io/edack-books/images/cookie-cover-800.webp",
         "description": "The whole British government is secretly a pantomime, run by a bored AI called Cookie. Then the system picks a villain for the nation to boo: Glenda Price, a lollipop lady from Gloucester with no smartphone.",
         "genre": "Satire",
         "inLanguage": "en-GB",
@@ -98,11 +102,11 @@
       },
       {
         "@type": "Book",
-        "@id": "https://edack-books.up.railway.app/#watchers-guide",
+        "@id": "https://dai1964.github.io/edack-books/#watchers-guide",
         "name": "The Watcher's Guide to the End of the World",
-        "author": { "@id": "https://edack-books.up.railway.app/#author" },
+        "author": { "@id": "https://dai1964.github.io/edack-books/#author" },
         "url": "https://www.amazon.co.uk/dp/B0HM815TNF",
-        "image": "https://edack-books.up.railway.app/images/watchers-guide-cover-800.webp",
+        "image": "https://dai1964.github.io/edack-books/images/watchers-guide-cover-800.webp",
         "description": "In 2019 a council clerk dropped one letter from a man's name, and the national database created a second person. Now EDAK is the most dangerous man in Britain and, technically, about forty million people.",
         "genre": "Satire",
         "inLanguage": "en-GB",
@@ -122,7 +126,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="#top">
-        <img src="/images/badge-96.webp" srcset="/images/badge-96.webp 1x, /images/badge-192.webp 2x"
+        <img src="images/badge-96.webp" srcset="images/badge-96.webp 1x, images/badge-192.webp 2x"
              width="40" height="40" alt="">
         <span>EDACK Books</span>
       </a>
@@ -148,8 +152,8 @@
     <!-- 1. Hero -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <img class="hero-bg"
-           src="/images/hero-artwork-1080.webp"
-           srcset="/images/hero-artwork-640.webp 640w, /images/hero-artwork-1080.webp 1080w, /images/hero-artwork-1600.webp 1600w"
+           src="images/hero-artwork-1080.webp"
+           srcset="images/hero-artwork-640.webp 640w, images/hero-artwork-1080.webp 1080w, images/hero-artwork-1600.webp 1600w"
            sizes="(min-width: 900px) 62vw, 100vw" width="1080" height="1341" fetchpriority="high" decoding="async"
            alt="Five cartoon woodland friends in martial-arts robes around a messy dinner table in a cosy treehouse, with gravy flying everywhere">
       <div class="container hero-content">
@@ -169,8 +173,8 @@
         <p class="eyebrow">For kids</p>
         <article class="feature-card reveal">
           <div class="feature-cover">
-            <img src="/images/lean-heroes-cover-480.webp"
-                 srcset="/images/lean-heroes-cover-480.webp 480w, /images/lean-heroes-cover-960.webp 960w"
+            <img src="images/lean-heroes-cover-480.webp"
+                 srcset="images/lean-heroes-cover-480.webp 480w, images/lean-heroes-cover-960.webp 960w"
                  sizes="(min-width: 900px) 400px, 80vw" width="480" height="600" loading="lazy" decoding="async"
                  alt="Cover of The Lean Heroes and the Dinner Disaster by David Edack: five woodland friends around a messy dinner table">
           </div>
@@ -219,15 +223,15 @@
           <p class="lead">Print it, sign it, stick it on the fridge!</p>
         </div>
         <figure class="printable-preview reveal">
-          <img src="/images/yellow-belt-certificate-640.webp"
-               srcset="/images/yellow-belt-certificate-640.webp 640w, /images/yellow-belt-certificate-1280.webp 1280w"
+          <img src="images/yellow-belt-certificate-640.webp"
+               srcset="images/yellow-belt-certificate-640.webp 640w, images/yellow-belt-certificate-1280.webp 1280w"
                sizes="(min-width: 900px) 560px, 92vw" width="640" height="453" loading="lazy" decoding="async"
                alt="Preview of the free Lean Hero Yellow Belt certificate: a Certificate of Achievement with a space for a name, surrounded by the Lean Heroes characters and oak leaves">
         </figure>
         <div class="printable-actions">
           <div class="button-row">
-            <a class="btn btn-primary" href="/downloads/lean-hero-yellow-belt-certificate-A4.pdf" download>Download A4 (PDF)</a>
-            <a class="btn btn-secondary" href="/downloads/lean-hero-yellow-belt-certificate-US-Letter.pdf" download>Download US Letter (PDF)</a>
+            <a class="btn btn-primary" href="downloads/lean-hero-yellow-belt-certificate-A4.pdf" download>Download A4 (PDF)</a>
+            <a class="btn btn-secondary" href="downloads/lean-hero-yellow-belt-certificate-US-Letter.pdf" download>Download US Letter (PDF)</a>
           </div>
           <p class="small">A4 for the UK and Europe. US Letter for the USA and Canada.</p>
         </div>
@@ -242,8 +246,8 @@
 
         <div class="book-grid">
           <article class="book-card reveal">
-            <img class="book-cover" src="/images/cookie-cover-400.webp"
-                 srcset="/images/cookie-cover-400.webp 400w, /images/cookie-cover-800.webp 800w"
+            <img class="book-cover" src="images/cookie-cover-400.webp"
+                 srcset="images/cookie-cover-400.webp 400w, images/cookie-cover-800.webp 800w"
                  sizes="(min-width: 768px) 220px, 60vw" width="400" height="600" loading="lazy" decoding="async"
                  alt="Cover of Cookie and the Pantomime of Power by EDACK: a lollipop lady's STOP sign in front of the door of Number 10, between red theatre curtains">
             <div class="book-body">
@@ -263,8 +267,8 @@
 
           <article class="book-card reveal">
             <!-- To swap this cover: replace images/watchers-guide-cover.jpg, run npm run images, and update the alt text below. -->
-            <img class="book-cover" src="/images/watchers-guide-cover-400.webp"
-                 srcset="/images/watchers-guide-cover-400.webp 400w, /images/watchers-guide-cover-800.webp 800w"
+            <img class="book-cover" src="images/watchers-guide-cover-400.webp"
+                 srcset="images/watchers-guide-cover-400.webp 400w, images/watchers-guide-cover-800.webp 800w"
                  sizes="(min-width: 768px) 220px, 60vw" width="400" height="600" loading="lazy" decoding="async"
                  alt="Cover of The Watcher's Guide to the End of the World by EDACK: a large eye with the letter E, and the words Stay calm. Stay compliant. Stay you.">
             <div class="book-body">
@@ -289,8 +293,8 @@
     <section class="section section-about" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
         <figure class="about-figure reveal">
-          <img src="/images/master-taff-320.webp"
-               srcset="/images/master-taff-320.webp 320w, /images/master-taff-640.webp 640w"
+          <img src="images/master-taff-320.webp"
+               srcset="images/master-taff-320.webp 320w, images/master-taff-640.webp 640w"
                sizes="(min-width: 768px) 280px, 60vw" width="320" height="320" loading="lazy" decoding="async"
                alt="Master Taff, the wise bearded dragon from the Lean Heroes, in a gold picture frame">
           <figcaption>Master Taff, from the Lean Heroes, inspired by the real Taff</figcaption>

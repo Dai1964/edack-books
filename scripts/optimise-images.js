@@ -1,4 +1,4 @@
-// Turns the original pictures in /images into small, fast WebP files in /public/images.
+// Turns the original pictures in /images into small, fast WebP files in /docs/images.
 // It also makes the browser-tab icons and the 1200x630 share picture.
 // Run it with: npm run images
 // The originals in /images are never changed.
@@ -9,8 +9,8 @@ const sharp = require('sharp');
 
 const ROOT = path.join(__dirname, '..');
 const SRC = path.join(ROOT, 'images');
-const OUT = path.join(ROOT, 'public', 'images');
-const ICONS = path.join(ROOT, 'public'); // icons live at the top of the site
+const OUT = path.join(ROOT, 'docs', 'images');
+const ICONS = path.join(ROOT, 'docs'); // icons live at the top of the site
 
 // Each picture, and the widths (in pixels) to make it at.
 // To swap a cover: replace the file in /images (same name), then run npm run images.

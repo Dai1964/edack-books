@@ -16,34 +16,40 @@ The site restarts by itself when you save a file. Press Ctrl+C to stop it.
 1. Put the new picture in the `images/` folder with the **same file name**
    (for example `images/watchers-guide-cover.jpg`).
 2. Run: `npm run images`
-3. In `public/index.html`, update the picture's description (the `alt="..."` text).
+3. In `docs/index.html`, update the picture's description (the `alt="..."` text).
 
-The script makes small, fast copies in `public/images/`. Your originals in `images/` are never changed.
+The script makes small, fast copies in `docs/images/`. Your originals in `images/` are never changed.
 
 ## Placeholders to fill in
 
-- **Web address:** replace `https://edack-books.up.railway.app` with your real address in
-  `public/index.html`, `public/robots.txt` and `public/sitemap.xml`.
-- **Pinterest and TikTok:** in `public/index.html`, near the bottom, replace
+- **Pinterest and TikTok:** in `docs/index.html`, near the bottom, replace
   `YOUR-PINTEREST-NAME` and `YOUR-TIKTOK-NAME`.
 
 ## What's where
 
 | Folder or file | What it is |
 | --- | --- |
-| `server.js` | The server that sends the website to visitors. |
-| `public/` | Everything visitors see: the page, styles, script, pictures, fonts, PDFs. |
-| `public/downloads/` | The free certificate PDFs. |
+| `server.js` | Shows the site on your computer (`npm run dev`). GitHub Pages doesn't use it. |
+| `docs/` | Everything visitors see: the page, styles, script, pictures, fonts, PDFs. |
+| `docs/downloads/` | The free certificate PDFs. |
 | `images/` | Your original, full-size pictures (not on the website). |
 | `scripts/optimise-images.js` | Makes the small, fast pictures and icons. |
 
-## On Railway
+## Where the site lives
 
-- Start command: `npm start`
-- Health check path: `/health`
-- Railway sets the port by itself.
+The live site is on GitHub Pages: https://dai1964.github.io/edack-books/
+
+Every upload to the `main` branch puts the `docs` folder online by itself, in about a minute
+(GitHub repo Settings → Pages → "Deploy from a branch", `main`, `/docs`).
+
+**Moving to your own domain later:** replace `https://dai1964.github.io/edack-books` in
+`docs/index.html`, `docs/robots.txt` and `docs/sitemap.xml`, and change `/edack-books/`
+to `/` in `docs/404.html`.
+
+**Railway instead (optional):** `server.js` also works on Railway. Start command `npm start`,
+health check path `/health`.
 
 ## Fonts
 
-Fredoka and Nunito are stored in `public/fonts/` under the SIL Open Font License
-(see `public/fonts/OFL-LICENSE.txt`).
+Fredoka and Nunito are stored in `docs/fonts/` under the SIL Open Font License
+(see `docs/fonts/OFL-LICENSE.txt`).

@@ -1,5 +1,5 @@
 // The EDACK Books web server.
-// It sends the website in /public to visitors and answers Railway's health check.
+// It sends the website in /docs to visitors and answers Railway's health check.
 
 const path = require('node:path');
 const express = require('express');
@@ -7,7 +7,7 @@ const compression = require('compression');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const PUBLIC = path.join(__dirname, 'public');
+const PUBLIC = path.join(__dirname, 'docs');
 
 // Don't tell the world which server software we use.
 app.disable('x-powered-by');

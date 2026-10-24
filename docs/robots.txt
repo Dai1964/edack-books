@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edack-books.up.railway.app/sitemap.xml
+Sitemap: https://dai1964.github.io/edack-books/sitemap.xml
