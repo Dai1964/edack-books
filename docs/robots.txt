@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dai1964.github.io/edack-books/sitemap.xml
+Sitemap: https://www.edackdavid.com/sitemap.xml

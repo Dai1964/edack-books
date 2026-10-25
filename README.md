@@ -11,6 +11,9 @@ No database, no login, no cookies, no tracking.
 
 The site restarts by itself when you save a file. Press Ctrl+C to stop it.
 
+Note: on your computer the free game looks unstyled, because `server.js` blocks its built-in styles.
+The live site is fine. GitHub Pages doesn't use `server.js`.
+
 ## Change a picture (for example the Watcher's Guide cover)
 
 1. Put the new picture in the `images/` folder with the **same file name**
@@ -20,10 +23,17 @@ The site restarts by itself when you save a file. Press Ctrl+C to stop it.
 
 The script makes small, fast copies in `docs/images/`. Your originals in `images/` are never changed.
 
-## Placeholders to fill in
+**The EDACK logo** has its own script: `node scripts/make-logo-images.js`
+(it reads `images/edack-logo.png`, `edack-logo-512.png` and `edack-logo-180.png`).
 
-- **Pinterest and TikTok:** in `docs/index.html`, near the bottom, replace
-  `YOUR-PINTEREST-NAME` and `YOUR-TIKTOK-NAME`.
+## Add a free printable
+
+See `HOW-TO-ADD-A-FREEBIE.md`. The list lives in `docs/freebies.json`.
+
+## Social links
+
+Pinterest and TikTok are hidden for now. Their code is kept inside a `<template>` near the bottom of
+`docs/index.html`, with a note saying how to bring them back once you have real addresses.
 
 ## What's where
 
@@ -31,20 +41,26 @@ The script makes small, fast copies in `docs/images/`. Your originals in `images
 | --- | --- |
 | `server.js` | Shows the site on your computer (`npm run dev`). GitHub Pages doesn't use it. |
 | `docs/` | Everything visitors see: the page, styles, script, pictures, fonts, PDFs. |
-| `docs/downloads/` | The free certificate PDFs. |
+| `docs/CNAME` | Tells GitHub the site's domain: `www.edackdavid.com`. |
+| `docs/freebies.json` | The list of free printables. |
+| `docs/downloads/` | The free printable PDFs. |
+| `docs/audio/` | The free Chapter One recordings. |
+| `docs/games/` | The free Lean Heroes game. |
 | `images/` | Your original, full-size pictures (not on the website). |
 | `scripts/optimise-images.js` | Makes the small, fast pictures and icons. |
+| `scripts/make-logo-images.js` | Makes the EDACK logo pictures and icons. |
+| `HOW-TO-ADD-A-FREEBIE.md` | Five steps to add a new free printable. |
 
 ## Where the site lives
 
-The live site is on GitHub Pages: https://dai1964.github.io/edack-books/
+The live site is on GitHub Pages, at **https://www.edackdavid.com/**
+(the old address https://dai1964.github.io/edack-books/ sends visitors there by itself).
 
 Every upload to the `main` branch puts the `docs` folder online by itself, in about a minute
 (GitHub repo Settings → Pages → "Deploy from a branch", `main`, `/docs`).
 
-**Moving to your own domain later:** replace `https://dai1964.github.io/edack-books` in
-`docs/index.html`, `docs/robots.txt` and `docs/sitemap.xml`, and change `/edack-books/`
-to `/` in `docs/404.html`.
+**If the domain ever changes:** update `docs/CNAME`, and replace `https://www.edackdavid.com` in
+`docs/index.html`, `docs/robots.txt` and `docs/sitemap.xml`.
 
 **Railway instead (optional):** `server.js` also works on Railway. Start command `npm start`,
 health check path `/health`.
