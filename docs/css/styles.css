@@ -515,6 +515,12 @@ a {
   font-size: clamp(1.2rem, 1.2vw + 1rem, 1.5rem);
 }
 
+/* "Listen to the first chapters free." under the hero buttons */
+.hero-note {
+  margin: 20px 0 0;
+  font-weight: 700;
+}
+
 .hero-bg {
   order: 2;
   width: 100%;
@@ -752,6 +758,7 @@ a {
   --focus: var(--gold);
   background: var(--bg);
   color: var(--text);
+  color-scheme: dark; /* so the audio players match the dark section */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -796,6 +803,43 @@ a {
 
 .see-amazon {
   margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* "Listen to Chapter One, free" box inside each satire card */
+.listen {
+  margin: 20px 0 24px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
+}
+
+.listen-title {
+  margin: 0 0 4px;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.listen-meta {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.listen audio {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+}
+
+/* Big enough to tap easily (inline-block keeps the space before "(9 MB)") */
+.listen-download {
+  display: inline-block;
+  margin-top: 2px;
+  padding-block: 10px;
   font-weight: 700;
 }
 
