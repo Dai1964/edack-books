@@ -679,6 +679,50 @@ a {
   }
 }
 
+/* The free Lean Heroes game card, under the book */
+.game-card {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  margin-top: 24px;
+  padding: clamp(20px, 4vw, 40px);
+  border: 2px dashed color-mix(in srgb, var(--coral) 60%, transparent);
+  border-radius: var(--radius);
+  background: radial-gradient(ellipse at 0% 0%, var(--gold-soft), transparent 70%), var(--surface);
+  text-align: center;
+}
+
+.game-badge {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.game-body h3 {
+  margin-bottom: 0.3em;
+}
+
+.game-body p {
+  max-width: 46ch;
+  margin-inline: auto;
+}
+
+/* Bigger screens: the badge sits to the left of the words */
+@media (min-width: 768px) {
+  .game-card {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: start;
+    column-gap: 32px;
+    text-align: left;
+  }
+
+  .game-body p {
+    margin-inline: 0;
+  }
+}
+
 /* ---------- 3. Free printable ---------- */
 .section-printable {
   background: radial-gradient(ellipse at 85% 20%, var(--gold-soft), transparent 55%), var(--surface-alt);
