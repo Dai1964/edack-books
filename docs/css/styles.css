@@ -319,10 +319,29 @@ a {
   text-decoration: none;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+/* The EDACK logo: 44px tall on phones, 56px on bigger screens */
+.logo .logo-img {
+  width: auto;
+  height: 44px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: 72px;
+  }
+
+  .logo .logo-img {
+    height: 56px;
+  }
+}
+
+/* The logo's quote text is dark, so on the dark theme the logo sits on a soft cream circle */
+@media (prefers-color-scheme: dark) {
+  .logo-img {
+    padding: 3px;
+    border-radius: 50%;
+    background: var(--cream);
+  }
 }
 
 /* The hamburger button (phones only) */
@@ -800,8 +819,8 @@ a {
 }
 
 .about-figure img {
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
+  width: 220px;
+  filter: drop-shadow(0 16px 24px rgba(58, 34, 16, 0.25));
 }
 
 .about-figure figcaption {
@@ -810,9 +829,39 @@ a {
   font-size: 0.9rem;
 }
 
-.about-text p:not(.eyebrow) {
+.about-text > p:not(.eyebrow) {
   max-width: 60ch;
   font-size: 1.15rem;
+}
+
+/* Master Taff's little round picture next to the "pet bearded dragon" line */
+.taff-note {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 60ch;
+  margin: 24px 0 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.taff-note img {
+  flex: none;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.taff-note p {
+  margin: 0;
+}
+
+.taff-note p + p {
+  margin-top: 4px;
 }
 
 @media (min-width: 768px) {
@@ -849,6 +898,16 @@ a {
 
 .site-footer h2 {
   margin-bottom: 0.3em;
+}
+
+/* Small logo above "Say hello", always on cream so it shows up on the green */
+.footer-logo {
+  width: 72px;
+  height: auto;
+  margin-bottom: 16px;
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--cream);
 }
 
 .site-footer .btn {

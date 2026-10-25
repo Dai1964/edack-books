@@ -17,6 +17,15 @@ desktop.ini
 # Private notes (they contain my real name)
 EDACK website - Claude Code prompt.md
 
+# My other prompt notes, never for GitHub
+EDACK website - *prompt*.md
+
+# The chapter script is just for me, not for the website
+audio/Watcher's Guide - Chapter 1 - script.txt
+
+# Word's temporary files (they start with ~$)
+~$*
+
 # Editor settings
 .vscode/
 .idea/
