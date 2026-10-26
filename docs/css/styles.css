@@ -1174,3 +1174,178 @@ a {
     transform: none;
   }
 }
+
+/* ---------- Lesson pages (Elements of Lean) ----------
+   Text on lesson pages is never smaller than 18px. */
+.lesson {
+  font-size: 1.125rem;
+}
+
+.lesson .btn {
+  font-size: 1.125rem;
+}
+
+.lesson-inner {
+  max-width: 760px;
+}
+
+.lesson h1 {
+  font-size: clamp(2.1rem, 5vw + 0.5rem, 3.4rem);
+}
+
+.lesson h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 1.6em;
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+}
+
+.lesson-crumbs {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+.lesson-kicker {
+  margin-bottom: 0.5rem;
+  color: var(--accent-text);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.lesson-lead {
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.45rem);
+}
+
+.lesson-num {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--cream);
+  font-size: 1.4rem;
+}
+
+.lesson-game,
+.lesson-check {
+  margin: 1.5rem 0;
+  padding: clamp(20px, 4vw, 32px);
+  border-radius: var(--radius);
+  background: var(--gold-soft);
+}
+
+.lesson-check {
+  background: var(--surface-alt);
+}
+
+.lesson-game-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sipoc-table {
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  border-collapse: collapse;
+}
+
+.sipoc-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.sipoc-table th,
+.sipoc-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+/* On phones the table becomes a list of cards, one per letter */
+@media (max-width: 599px) {
+  .sipoc-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .sipoc-table tr {
+    display: block;
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    background: var(--surface-alt);
+  }
+
+  .sipoc-table th,
+  .sipoc-table td {
+    display: block;
+    padding: 2px 0;
+    border: 0;
+  }
+
+  .sipoc-table th {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+  }
+}
+
+.lesson-steps li + li {
+  margin-top: 0.6em;
+}
+
+.lesson-note {
+  margin-top: 2rem;
+  color: var(--muted);
+}
+
+.lesson-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 2rem;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.lesson-author img {
+  flex: none;
+  width: 64px;
+  height: auto;
+}
+
+.lesson-author p {
+  margin: 0;
+}
+
+.lesson-footer-text {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+/* ---------- The Summer Fayre game card ---------- */
+.game-card-fayre {
+  border-color: color-mix(in srgb, var(--gold) 80%, transparent);
+}
+
+.game-emoji {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #FFE36E;
+  box-shadow: var(--shadow);
+  font-size: 4rem;
+  line-height: 1;
+}

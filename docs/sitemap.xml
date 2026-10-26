@@ -24,4 +24,13 @@
     <loc>https://www.edackdavid.com/games/lean-heroes-dinner-disaster.html</loc>
     <lastmod>2026-10-25</lastmod>
   </url>
+  <url>
+    <loc>https://www.edackdavid.com/games/lean-heroes-summer-fayre.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <image:image>
+      <image:loc>https://www.edackdavid.com/images/pin-summer-fayre.jpg</image:loc>
+    </image:image>
+  </url>
+  <!-- Draft, not listed until approved: https://www.edackdavid.com/elements-of-lean/bonus-sipoc/ -->
+
 </urlset>

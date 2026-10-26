@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "pages-copy",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "const e=require('express');const a=e();a.use(e.static('docs'));a.listen(3002,()=>console.log('ready 3002'))"],
+      "port": 3002
     }
   ]
 }
