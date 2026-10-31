@@ -78,9 +78,9 @@ const dataUri = (buffer, type) => `data:${type};base64,${buffer.toString('base64
 
 // ---------- The certificate itself (drawn at 0,0, then tilted onto the pin) ----------
 const CW = 860;
-const CH = 830;
+const CH = 790; // was 830 with the "Certificate 1 of 2" line; each certificate now stands on its own
 
-function certificate({ title, lines, steps, collect, taff, badge }) {
+function certificate({ title, lines, steps, taff, badge }) {
   const stepGap = 150;
   const firstStep = CW / 2 - stepGap * 2;
   const stepStars = steps.map(([letter, word], i) => {
@@ -129,9 +129,7 @@ function certificate({ title, lines, steps, collect, taff, badge }) {
     <!-- The "I'm a Lean Hero!" badge as the seal, with ribbon tails -->
     <path d="M688 668 l-22 66 l28 -14 l16 24 l16 -72 z" fill="${CORAL}" stroke="${BROWN}" stroke-width="3" stroke-linejoin="round"/>
     <path d="M752 668 l22 66 l-28 -14 l-16 24 l-16 -72 z" fill="${GREEN}" stroke="${BROWN}" stroke-width="3" stroke-linejoin="round"/>
-    <image href="${badge}" x="652" y="572" width="136" height="136"/>
-
-    <text x="${CW / 2}" y="770" text-anchor="middle" font-family="${SANS}" font-size="22" font-weight="700" fill="${GREEN}">${collect}</text>`;
+    <image href="${badge}" x="652" y="572" width="136" height="136"/>`;
 }
 
 function pin({ background, hook, cert, strip }) {
@@ -149,7 +147,7 @@ function pin({ background, hook, cert, strip }) {
     <text x="500" y="180" text-anchor="middle" font-family="${SERIF}" font-size="72" font-weight="700" fill="#FFFFFF">${hook[1]}</text>
   </g>
 
-  <g transform="translate(70 400) rotate(-3 ${CW / 2} ${CH / 2})">
+  <g transform="translate(70 420) rotate(-3 ${CW / 2} ${CH / 2})">
     ${cert}
   </g>
 
@@ -185,7 +183,6 @@ async function main() {
       cert: certificate({
         title: ['Dinner Disaster', 'Solved!'],
         lines: ['who used all five Lean Hero steps to find', 'what went wrong and save Friday dinner!'],
-        collect: 'Certificate 1 of 2 · Collect the Summer Fayre one too!',
         steps: [['D', 'Define'], ['M', 'Measure'], ['A', 'Analyse'], ['I', 'Improve'], ['C', 'Control']],
         taff, badge
       })
@@ -200,7 +197,6 @@ async function main() {
       cert: certificate({
         title: ['Fayre', 'Champion!'],
         lines: ['who mapped the whole lemonade stall with SIPOC,', 'from suppliers to happy customers!'],
-        collect: 'Certificate 2 of 2 · Collect the Dinner Disaster one too!',
         steps: [['S', 'Suppliers'], ['I', 'Inputs'], ['P', 'Process'], ['O', 'Outputs'], ['C', 'Customers']],
         taff, badge
       })
