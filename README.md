@@ -3,6 +3,13 @@
 A small, fast, one-page author website for EDACK Books.
 No database, no login, no cookies, no tracking.
 
+## Never delete these
+
+They prove EDACK owns the site. Never delete, rename or change them:
+
+- `docs/google20fe0b6b036fb169.html` (Google Search Console)
+- the Pinterest `p:domain_verify` tag in the `<head>` of `docs/index.html`
+
 ## Run it on your computer
 
 1. Install the tools (only needed once): `npm install`
