@@ -199,7 +199,8 @@
   .kbtns button { min-width: 44px; min-height: 44px; border: 2px solid var(--border); border-radius: 10px; background: #fff; cursor: pointer; font-weight: 700; }
   .kbtns .eat { background: #DFF0D8; }
   .kbtns .home { background: var(--coral-soft); }
-  .kbtns .pack { background: var(--lemon-soft); }
+  .kbtns .pack { padding: 0 10px; background: var(--gold); border-color: var(--brown); }
+  #pack-all-btn[disabled] { opacity: 0.5; cursor: default; }
 
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
   .stats div { padding: 10px; text-align: center; background: var(--paper); border: 2px solid var(--gold); border-radius: var(--radius-sm); }
@@ -538,8 +539,11 @@
 
       <div class="panel">
         <h2>The Kanban board</h2>
-        <p>Pack a card with 🎒. After school, tap ✅ if you ate it, or ↩️ if it came home. ↺ puts it back.</p>
+        <p>Tap <strong>🎒 Pack</strong> to put a food in the lunchbox. After school, tap ✅ if you ate it, or ↩️ if it came home. ↺ puts it back.</p>
         <div class="days" id="board-days" role="group" aria-label="Show the board for"></div>
+        <div class="button-row">
+          <button class="btn" type="button" id="pack-all-btn">🎒 Pack all for this day</button>
+        </div>
         <div class="board">
           <div class="col"><h3>📋 To pack</h3><div id="col-0"></div></div>
           <div class="col"><h3>🎒 In the lunchbox</h3><div id="col-1"></div></div>
@@ -1005,7 +1009,7 @@
   function renderBoard() {
     const label = (k) => esc(foodOf(k).name) + ' on ' + DAY_NAMES[k.day];
     const BTN = {
-      0: (k) => `<button type="button" class="pack" data-id="${k.id}" data-to="1" aria-label="Pack ${label(k)}">🎒</button>` +
+      0: (k) => `<button type="button" class="pack" data-id="${k.id}" data-to="1" aria-label="Pack ${label(k)}">🎒 Pack</button>` +
                `<button type="button" data-id="${k.id}" data-to="x" aria-label="Take ${label(k)} off the board">✕</button>`,
       1: (k) => `<button type="button" class="eat" data-id="${k.id}" data-to="2" aria-label="${label(k)} was eaten">✅</button>` +
                `<button type="button" class="home" data-id="${k.id}" data-to="3" aria-label="${label(k)} came home">↩️</button>`,
@@ -1026,12 +1030,27 @@
     $('stats').innerHTML = stats;
     $('paper-stats').innerHTML = stats;
 
+    // "Pack all" packs every To pack card for the day on show (or the whole week)
+    const toPack = shown.filter((k) => k.col === 0).length;
+    const packAll = $('pack-all-btn');
+    packAll.textContent = viewDay === 'all' ? `🎒 Pack all for the whole week (${toPack})` : `🎒 Pack all for ${DAY_NAMES[viewDay]} (${toPack})`;
+    packAll.disabled = toPack === 0;
+
     const auto = autoShop();
     $('shop').innerHTML = (auto.length || st.extraShop.length)
       ? auto.map((n) => `<li>${esc(n)} <button type="button" data-shop-auto="${esc(n)}" aria-label="Take ${esc(n)} off the shopping list">✕</button></li>`).join('') +
         st.extraShop.map((n, i) => `<li class="extra">${esc(n)} <button type="button" data-shop-extra="${i}" aria-label="Take ${esc(n)} off the shopping list">✕</button></li>`).join('')
       : '<li class="note" style="border:0;padding:0">Nothing yet. When a card reaches "Eaten", it lands here.</li>';
   }
+
+  $('pack-all-btn').addEventListener('click', () => {
+    const cards = st.cards.filter((k) => k.col === 0 && (viewDay === 'all' || k.day === viewDay));
+    if (!cards.length) return;
+    cards.forEach((k) => { k.col = 1; });
+    changed();
+    taff(`${cards.length} food${cards.length === 1 ? ' is' : 's are'} in the lunchbox! After school, tap ✅ or ↩️ for each one.`);
+    ($('col-1').querySelector('button') || $('pack-all-btn')).focus();
+  });
 
   document.querySelector('.board').addEventListener('click', (e) => {
     const b = e.target.closest('button[data-id]');
